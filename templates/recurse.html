@@ -1,0 +1,12 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Just a second...</title>
+</head>
+<body onload="document.getElementById('button').click()">
+    <form action="{{ url_for('survey_dispatch') }}" method="post">
+        <input type="hidden" value="{{ id }}" name="subject_id">
+        <input type="submit" id="button">
+    </form>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alcohol Study -- Instructions.</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="row col-md-offset-3">
+            <h1>Task for the following photograph: </h1>
+        </div>
+        <div style="height: 10px;"></div>
+        <div class="col-md-4 col-md-offset-2">
+            <img src="{{ d['picture_name'] }}"
+                 class="img-thumbnail">
+        </div>
+        <div class="col-md-4">
+            <div class="lead">
+                This photograph has been identified as containing
+                <strong>{{ d['focused_people'] }}</strong> focal
+                individuals, or people who are the focus of the photograph.
+                <div style="height: 40px;"></div>
+                You
+                are going to answer a brief set of questions about each of these
+                focal individuals in turn. If the photograph contains multiple
+                focal individuals, you will start with the focal individual
+                furthest towards the left and work your way towards the right.
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-6 col-md-4">
+                <div style="height: 25px;"></div>
+                <a href="{{ url_for('survey_page', picture_id=d['picture_id'], iteration=1) }}"
+                   class="btn btn-primary">Okay!</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

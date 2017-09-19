@@ -1,0 +1,51 @@
+<!doctype html>
+<head>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+          crossorigin="anonymous">
+    <title>Alcohol Study -- Index</title>
+</head>
+<body>
+<div class="row">
+    <div class="container col-md-12 text-center">
+        <h1>Alcohol Study</h1>
+    </div>
+</div>
+
+<div class="container-fluid">
+    {% if not data["is_evaluation_complete"] %}
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <h2>
+                    There are {{ data["pictures_left"] }} pictures left to
+                    evaluate.<br>
+                    <small>
+                        <a href="{{ url_for('evaluate_pictures') }}">
+                            Click here to evaluate more pictures!
+                        </a> <br> <br>
+                    </small>
+                </h2>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="col-md-6 center container col-md-offset-3">
+            <form action="{{ url_for('survey_dispatch') }}" method="post"
+                  class="input">
+                <div class="form-group">
+                    <label for="subject_id">Start run for subject:</label>
+
+                    <input type="text"
+                           autocomplete="off"
+                           name="subject_id"
+                           id="subject_id"
+                           class="form-control input-lg">
+                </div>
+                <input type="submit" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
